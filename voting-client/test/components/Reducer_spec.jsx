@@ -1,9 +1,9 @@
 import {List, Map, fromJS} from 'immutable';
 import {expect} from 'chai';
 
-import reducer from '../src/reducer';
+import reducer from '../../src/reducer';
 
-describe('reducer', () => {
+describe('Reducer', () => {
 
     it('handles SET_STATE', () => {
         const initialState = Map();
@@ -18,7 +18,7 @@ describe('reducer', () => {
         }
         const nextState = reducer(initialState, action);
 
-        expext(nextState).to.equal(fromJS({
+        expect(nextState).to.equal(fromJS({
             vote: {
                 pair: ['Trainspotting', '28 Days Later'],
                 tally: {
@@ -41,7 +41,7 @@ describe('reducer', () => {
         }
         const nextState = reducer(initialState, action);
 
-        expext(nextState).to.equal(fromJS({
+        expect(nextState).to.equal(fromJS({
             vote: {
                 pair: ['Trainspotting', '28 Days Later'],
                 tally: {
@@ -63,7 +63,7 @@ describe('reducer', () => {
         }
         const nextState = reducer(undefined, action);
 
-        expext(nextState).to.equal(fromJS({
+        expect(nextState).to.equal(fromJS({
             vote: {
                 pair: ['Trainspotting', '28 Days Later'],
                 tally: {
